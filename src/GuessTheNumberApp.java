@@ -48,7 +48,7 @@ public class GuessTheNumberApp
 		{
 			i = getInt(sc, Prompt);
 			
-			if( i >= MIN && i <= 100)
+			if( i >= MIN && i <= LIMIT)
 			{
 				isValid = true;
 			}else {
@@ -61,7 +61,7 @@ public class GuessTheNumberApp
 	}
 	
 	public static void checkGuess (int guess, int number)
-	{
+	{	
 		if(guess > number && (guess-number)>10){
 			System.out.println("Way too high, like your mother must have been \n"
 							 + "when you were conceived.");
@@ -69,7 +69,7 @@ public class GuessTheNumberApp
 		}else if (guess>number) {
 			System.out.println("Too high, you shit bird");
 		}else if (guess<number && (number-guess)>10) {
-			System.out.println("Too low-- which is something I'm sure you've heard \n"
+			System.out.println("Way too low-- which is something I'm sure you've heard \n"
 							 + "about your IQ repeatedly.");
 		}else if (guess<number) {
 			System.out.println("Too low, bastard face.");
@@ -90,9 +90,10 @@ public class GuessTheNumberApp
 		
 		int count = 1;
 		
-		while(choice.equalsIgnoreCase("Y")) 
+		while(true) 
 		{
 			int guess = getIntInRange(sc, "\nGuess a god damn number:  ", MIN, LIMIT);
+			
 			checkGuess(guess, number);
 			
 			if (guess == number && count <= 3) {
