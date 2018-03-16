@@ -6,9 +6,9 @@ public class GuessTheNumberApp
 	public static void welcome()
 	{
 		System.out.println("Welcome, fuck stick! \n"
-						 + "This App is going to see if you can guess a number \n"
-						 + "between 1 and 100. \n"
-						 + "I'll bet your too shit for brains to do it! \n"
+						 + "This App is going to see if you can guess a random\n"
+						 + "number between 1 and 100. \n"
+						 + "I'll bet you're too shit for brains to do it! \n"
 						 + "Let's begin, ya dumb shit.");    
 	}
 
@@ -92,7 +92,7 @@ public class GuessTheNumberApp
 		
 		while(choice.equalsIgnoreCase("Y")) 
 		{
-			int guess = getIntInRange(sc, "Guess a god damn number:  ", MIN, LIMIT);
+			int guess = getIntInRange(sc, "\nGuess a god damn number:  ", MIN, LIMIT);
 			checkGuess(guess, number);
 			
 			if (guess == number && count <= 3) {
@@ -105,7 +105,7 @@ public class GuessTheNumberApp
 				break;
 			}else if (guess == number && count > 7) {
 				System.out.println("Oh my god.  It took your slow ass " + count + " tries.  Computers \n"
-						         + "dont' age. Still I have grown old, died, been reborn, and died again \n"
+						         + "dont' age. Yet still I have grown old, died, been reborn, and died again \n"
 						         + "while waiting for you.  Asshole.");
 				break;
 			}
